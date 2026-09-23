@@ -1,41 +1,102 @@
-<div align="center">
+# 🛡️ Lab Sandbox
 
-# 🧪 LAB SANDBOX — EXPERIMENTAL CODEBASE 🚀
+Laboratório experimental para praticar **Python, lógica, validação de dados e fundamentos de segurança de software**.
 
-<img src="https://img.shields.io/badge/ENVIRONMENT-SANDBOX-blue?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/STATUS-ACTIVE_EXPERIMENTATION-success?style=for-the-badge" />
-<img src="https://img.shields.io/badge/FOCUS-ALGORITHMS_%26_INNOVATION-purple?style=for-the-badge" />
+O projeto atual contém um analisador educacional de requisitos básicos de senhas. A ideia do repositório é evoluir pequenos experimentos com código simples, testável e bem documentado.
 
-> *“Where creative logic meets code: testing boundaries, breaking barriers, and building innovative solutions.”*
+## 🎯 Objetivos
 
-</div>
+- praticar lógica de programação;
+- transformar scripts em funções reutilizáveis;
+- validar entradas e tipos;
+- desenvolver testes automatizados;
+- aplicar organização e documentação de código;
+- explorar fundamentos de segurança de software.
 
----
+## 🛡️ Analisador de senhas
 
-## 🔬 About This Repository
+O arquivo `senha_segura.py` verifica cinco critérios:
 
-Welcome to my **lab-sandbox**! This is my personal engineering playground and experimental laboratory. Here, I test advanced code concepts, prototype new architectures, explore performance optimization, and play with cutting-edge computational logic outside of standard production boundaries.
+- pelo menos 8 caracteres;
+- letra maiúscula;
+- letra minúscula;
+- número;
+- caractere especial.
 
-### 🚀 What You Will Find Here:
-* **Code Prototypes:** Early-stage concepts and experimental scripts designed to test unique programming ideas.
-* **Performance Tests:** Benchmarks and sandbox scripts evaluating execution speed, memory efficiency, and syntax limits.
-* **Creative Problem Solving:** Non-standard approaches to complex algorithmic challenges and data manipulation.
+A classificação é uma **heurística educacional baseada nesses critérios**. Ela não calcula entropia, não estima tempo real para quebra de senha e não substitui políticas de autenticação ou ferramentas especializadas.
 
----
+O programa não exibe nem armazena a senha informada.
 
-## 🛠️ Engineering Standards
-Even in an experimental sandbox environment, every script adheres to clean code practices, modular design principles, and PEP 8 readability guidelines.
+## ▶️ Como executar
 
----
+Requer Python 3.10+.
 
-## 👩‍💻 Author
+```bash
+python senha_segura.py
+```
 
-<div align="center">
+## 🧪 Testes
 
-**Marcella Bongiolo**  
-*Future Software Engineer | UNESC Student*
+Os testes usam a biblioteca padrão `unittest`.
 
-[![GitHub Badge](https://img.shields.io/badge/GitHub-marcellabongiolo-181717?style=flat-square&logo=github)](https://github.com/marcellabongiolo)
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-marcellabongiolo-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/marcellabongiolo)
+```bash
+python -m unittest discover -s tests -v
+```
 
-</div>
+## 🔄 Integração contínua
+
+O GitHub Actions executa os testes automaticamente em pushes para `main` e em pull requests.
+
+## 📁 Estrutura
+
+```text
+lab-sandbox/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+├── tests/
+│   └── test_senha_segura.py
+├── .gitignore
+├── LICENSE
+├── README.md
+└── senha_segura.py
+```
+
+## 📚 Conceitos praticados
+
+**Python**
+- funções;
+- type hints;
+- dicionários;
+- validação de tipos;
+- interface de linha de comando.
+
+**Engenharia de Software**
+- separação entre lógica e apresentação;
+- testes automatizados;
+- documentação;
+- CI;
+- código reutilizável.
+
+**Segurança**
+- avaliação básica de requisitos de senha;
+- princípio de não expor a credencial analisada;
+- diferença entre heurística e avaliação de segurança real.
+
+## 🚀 Próximos experimentos
+
+- adicionar métricas de entropia de forma responsável;
+- separar o domínio da interface de linha de comando;
+- criar validações configuráveis;
+- experimentar análise de logs e tratamento seguro de dados;
+- explorar conceitos de autenticação e armazenamento seguro de credenciais.
+
+## 👩‍💻 Autora
+
+**Marcella Bongiolo**
+
+Repositório voltado à prática de programação e fundamentos de Engenharia de Software.
+
+## 📄 Licença
+
+Distribuído sob a licença MIT.

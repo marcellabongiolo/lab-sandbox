@@ -5,6 +5,10 @@ não mede resistência real a ataques nem substitui políticas de segurança.
 """
 
 
+import getpass
+import warnings
+
+
 def analisar_forca_senha(senha: str) -> dict[str, object]:
     """Analisa requisitos básicos sem armazenar ou exibir a senha."""
     if not isinstance(senha, str):
@@ -54,7 +58,16 @@ def exibir_relatorio(resultado: dict[str, object]) -> None:
 
 def main() -> None:
     """Executa o analisador pela linha de comando."""
-    senha = input("Digite uma senha para analisar: ")
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", getpass.GetPassWarning)
+            senha = getpass.getpass("Digite uma senha para analisar: ")
+    except getpass.GetPassWarning:
+        print("Entrada oculta indisponível. Execute em um terminal compatível.")
+        return
+    except (EOFError, KeyboardInterrupt):
+        print("\nAnálise cancelada.")
+        return
     resultado = analisar_forca_senha(senha)
     exibir_relatorio(resultado)
 

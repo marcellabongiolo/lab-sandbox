@@ -25,7 +25,7 @@ O arquivo `senha_segura.py` verifica cinco critérios:
 
 A classificação é uma **heurística educacional baseada nesses critérios**. Ela não calcula entropia, não estima tempo real para quebra de senha e não substitui políticas de autenticação ou ferramentas especializadas.
 
-O programa não exibe nem armazena a senha informada.
+A entrada usa `getpass` para ocultar a digitação em terminais compatíveis; a senha não é incluída no relatório nem salva em arquivo. Se a entrada oculta não estiver disponível, o programa interrompe a leitura em vez de usar uma entrada visível.
 
 ## ▶️ Como executar
 
